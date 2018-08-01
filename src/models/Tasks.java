@@ -7,10 +7,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Entity
 @Table(name = "tasks")
+@NamedQueries({
+    @NamedQuery(
+            name = "getAllTasks",
+            query = "SELECT t FROM Tasks AS t ORDER BY t.id DESC"
+            ),
+    @NamedQuery(
+            name = "getTasksCount",
+            query = "SELECT COUNT(t) FROM Tasks AS t"
+            )
+})
+
+@Entity
 public class Tasks {
     @Id
     @Column(name = "id")
@@ -42,11 +55,11 @@ public class Tasks {
         this.content = content;
     }
 
-    public Date getCreated_at() {
+    public Date getDeadline() {
         return deadline;
     }
 
-    public void setCreated_at(Date deadline) {
+    public void setDeadline(Date deadline) {
         this.deadline = deadline;
     }
 
