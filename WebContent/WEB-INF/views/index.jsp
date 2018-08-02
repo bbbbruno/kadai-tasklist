@@ -9,36 +9,9 @@
             </div>
         </c:if>
         <h2>タスク　一覧</h2>
-        <table id="employee_list">
-            <tbody>
-                <tr>
-                    <th>タスク名</th>
-                    <th>期限</th>
-                    <th>進捗状況</th>
-                    <th>操作</th>
-                </tr>
-                <c:forEach var="task" items="${tasks}" varStatus="status">
-                    <tr class="row${status.count % 2}">
-                        <td><c:out value="${task.content}" /></td>
-                        <td><fmt:formatDate value="${task.deadline}" pattern='yyyy-MM-dd' /></td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${task.progress == 0}">
-                                    To-Do
-                                </c:when>
-                                <c:when test="${task.progress == 1}">
-                                    Doing
-                                </c:when>
-                                <c:when test="${task.progress == 2}">
-                                    Done
-                                </c:when>
-                            </c:choose>
-                        </td>
-                        <td><a href="<c:url value='/show.jsp?id=${task.id}' />">編集</a></td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+                <c:forEach var="task" items="${tasks}" >
+                       <h1><a href="<c:url value='/show?id=${task.id}' />"><c:out value="${task.content}" /></a></h1>
+                </c:forEach><br /><br />
 
         <div id="pagination">
             （全 ${tasks_count} 件）<br />
