@@ -18,5 +18,16 @@
 <input type="date" name="deadline" value="<fmt:formatDate value='${task.deadline}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 
+<c:choose>
+    <c:when test="${edit != null}">
+        <label for="progress">進捗状況</label><br />
+        <select name="progress">
+            <option value=0>To-Do</option>
+            <option value=1>Doing</option>
+            <option value=2>Done</option>
+        </select>
+    </c:when>
+</c:choose>
+
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>

@@ -13,6 +13,8 @@
                        <h1><a href="<c:url value='/show?id=${task.id}' />"><c:out value="${task.content}" /></a></h1>
                 </c:forEach><br /><br />
 
+                <p><a href="<c:url value='/new' />">新規タスクの登録</a></p><br />
+
         <div id="pagination">
             （全 ${tasks_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((tasks_count - 1) / 15) + 1}" step="1">
@@ -26,7 +28,5 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/new' />">新規タスクの登録</a></p>
-
     </c:param>
 </c:import>

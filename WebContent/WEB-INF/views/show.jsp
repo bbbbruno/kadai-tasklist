@@ -34,7 +34,7 @@
 					</tbody>
 				</table><br />
 
-				<a href="<c:url value='/edit' />">編集する</a>
+				<a href="<c:url value='/edit?id=${task.id}' />">編集する</a>
 
 			    </c:when>
 			    <c:otherwise>
