@@ -20,9 +20,8 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getTasksCount",
             query = "SELECT COUNT(t) FROM Tasks AS t"
-            )
+            ),
 })
-
 @Entity
 public class Tasks {
     @Id
@@ -30,7 +29,7 @@ public class Tasks {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "content", length = 30, nullable = false)
+    @Column(name = "content", length = 15, nullable = false )
     private String content;
 
     @Column(name = "deadline", nullable = false)

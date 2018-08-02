@@ -13,7 +13,7 @@
 						</tr>
 						<tr>
 							<th>期限</th>
-							<td><fmt:formatDate value="${task.deadline}" pattern='yyyy-MM-dd' /></td>
+						    <td><fmt:formatDate value="${task.deadline}" pattern='yyyy-MM-dd' /></td>
 						</tr>
 						<tr>
 							<th>進捗状況</th>
@@ -43,6 +43,7 @@
 		</c:choose>
 
 		<p><a href="<c:url value='/index' />">一覧に戻る</a></p><br />
+
 
 	</c:param>
 </c:import>
